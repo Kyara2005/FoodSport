@@ -1,0 +1,187 @@
+@import "tailwindcss";
+
+:root {
+  --pitch: #07140f;
+  --pitch-deep: #040a08;
+  --turf: #0f2a1c;
+  --night: #0b1220;
+  --gold: #e8b923;
+  --gold-bright: #ffd54a;
+  --gold-dim: #b8921f;
+  --foam: #f4f0e6;
+  --smoke: #c8c2b4;
+  --ember: #c45c26;
+  --panel: rgba(8, 14, 12, 0.78);
+  --background: var(--pitch-deep);
+  --foreground: var(--foam);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-pitch: var(--pitch);
+  --color-pitch-deep: var(--pitch-deep);
+  --color-turf: var(--turf);
+  --color-night: var(--night);
+  --color-gold: var(--gold);
+  --color-gold-bright: var(--gold-bright);
+  --color-gold-dim: var(--gold-dim);
+  --color-foam: var(--foam);
+  --color-smoke: var(--smoke);
+  --color-ember: var(--ember);
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body), sans-serif;
+  min-height: 100%;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--gold) 55%, transparent);
+  color: var(--pitch-deep);
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow-pulse {
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 0.85;
+  }
+}
+
+@keyframes float-soft {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-rise {
+  animation: rise-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-rise-delay-1 {
+  animation: rise-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both;
+}
+
+.animate-rise-delay-2 {
+  animation: rise-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both;
+}
+
+.animate-rise-delay-3 {
+  animation: rise-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.45s both;
+}
+
+.animate-glow {
+  animation: glow-pulse 4.5s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float-soft 5.5s ease-in-out infinite;
+}
+
+.stadium-wash {
+  background:
+    radial-gradient(ellipse 80% 55% at 50% -10%, rgba(232, 185, 35, 0.22), transparent 55%),
+    radial-gradient(ellipse 60% 50% at 85% 30%, rgba(15, 42, 28, 0.65), transparent 50%),
+    radial-gradient(ellipse 50% 40% at 10% 70%, rgba(11, 18, 32, 0.8), transparent 55%),
+    linear-gradient(165deg, #06110d 0%, #0a1a14 42%, #071018 100%);
+}
+
+.pitch-lines {
+  background-image:
+    linear-gradient(90deg, transparent 0%, transparent 48%, rgba(232, 185, 35, 0.08) 49%, rgba(232, 185, 35, 0.08) 51%, transparent 52%, transparent 100%),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 72px,
+      rgba(244, 240, 230, 0.03) 72px,
+      rgba(244, 240, 230, 0.03) 73px
+    );
+}
+
+.menu-frame {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--gold) 35%, transparent);
+  background: linear-gradient(180deg, rgba(12, 18, 16, 0.92), rgba(6, 10, 9, 0.96));
+  box-shadow:
+    0 24px 60px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 213, 74, 0.12);
+}
+
+.menu-frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(135deg, rgba(232, 185, 35, 0.08), transparent 40%, transparent 70%, rgba(196, 92, 38, 0.08));
+}
+
+.cta-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: linear-gradient(180deg, var(--gold-bright), var(--gold));
+  color: var(--pitch-deep);
+  font-family: var(--font-display), sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+  box-shadow: 0 10px 30px rgba(232, 185, 35, 0.28);
+}
+
+.cta-primary:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+  box-shadow: 0 14px 36px rgba(232, 185, 35, 0.38);
+}
+
+.cta-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid color-mix(in srgb, var(--gold) 55%, transparent);
+  color: var(--gold-bright);
+  font-family: var(--font-display), sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+
+.cta-ghost:hover {
+  background: color-mix(in srgb, var(--gold) 12%, transparent);
+  border-color: var(--gold-bright);
+  transform: translateY(-2px);
+}
