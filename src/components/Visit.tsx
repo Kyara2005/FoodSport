@@ -28,11 +28,24 @@ export function Visit() {
             deportivo.
           </p>
 
-          <dl className="mt-10 grid gap-6 sm:grid-cols-2">
-            <div>
-              <dt className="text-xs uppercase tracking-[0.22em] text-gold">Horario</dt>
-              <dd className="mt-2 text-foam">Lunes a domingo · 12:00 – 23:00</dd>
-            </div>
+          <div className="mt-10">
+            <p className="text-xs uppercase tracking-[0.22em] text-gold">Horario</p>
+            <dl className="mt-4 max-w-md space-y-2">
+              {[
+                ["Lun–Mié", "11 a. m. – 9:30 p. m."],
+                ["Jueves", "11 a. m. – 10 p. m."],
+                ["Vie–Sáb", "11 a. m. – 11:30 p. m."],
+                ["Domingo", "12 – 8 p. m."],
+              ].map(([day, hours]) => (
+                <div key={day} className="flex items-baseline justify-between gap-4 border-b border-white/10 py-2">
+                  <dt className="text-foam">{day}</dt>
+                  <dd className="text-sm text-smoke">{hours}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+
+          <dl className="mt-8 grid gap-6 sm:grid-cols-2">
             <div>
               <dt className="text-xs uppercase tracking-[0.22em] text-gold">Reservas</dt>
               <dd className="mt-2 text-foam">Escríbenos o pregunta en local</dd>
@@ -40,6 +53,22 @@ export function Visit() {
             <div>
               <dt className="text-xs uppercase tracking-[0.22em] text-gold">Ambiente</dt>
               <dd className="mt-2 text-foam">Parrilla, fútbol y buena compañía</dd>
+            </div>
+            <div className="sm:col-span-2">
+              <dt className="text-xs uppercase tracking-[0.22em] text-gold">Nuestro local</dt>
+              <dd className="mt-2 text-foam">
+                Avenida Cristóbal Vaca de Castro, y Pedro Freile, Quito
+              </dd>
+              <dd className="mt-3">
+                <a
+                  href="https://maps.app.goo.gl/F5D7B7uYNxNNqiZn9"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="cta-ghost inline-flex rounded-sm px-5 py-2.5 text-xs"
+                >
+                  Ver en Google Maps
+                </a>
+              </dd>
             </div>
             <div>
               <dt className="text-xs uppercase tracking-[0.22em] text-gold">Especialidad</dt>
