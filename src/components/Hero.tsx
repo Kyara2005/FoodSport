@@ -3,15 +3,25 @@ import logoFoodSport from "../../public/images/logo-food-sport.png";
 
 export function Hero() {
   return (
-    <section
-      id="inicio"
-      className="relative flex min-h-svh items-center overflow-hidden stadium-wash pitch-lines"
-    >
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute -left-24 top-24 h-72 w-72 rounded-full bg-gold/15 blur-3xl animate-glow" />
-        <div className="absolute bottom-10 right-0 h-80 w-80 rounded-full bg-ember/20 blur-3xl animate-glow" />
-        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-pitch-deep to-transparent" />
-      </div>
+    <section id="inicio" className="relative flex min-h-svh items-center overflow-hidden">
+      <Image
+        src="/images/hero-local.png"
+        alt=""
+        fill
+        priority
+        quality={100}
+        sizes="100vw"
+        className="object-cover object-center brightness-[1.12]"
+        aria-hidden
+      />
+      <div
+        className="absolute inset-0 bg-gradient-to-r from-pitch-deep/88 via-pitch-deep/70 to-pitch-deep/40"
+        aria-hidden
+      />
+      <div
+        className="absolute inset-0 bg-gradient-to-t from-pitch-deep via-transparent to-pitch-deep/40"
+        aria-hidden
+      />
 
       <div className="relative mx-auto grid w-full max-w-6xl items-center gap-10 px-5 pb-20 pt-28 md:grid-cols-[1.05fr_0.95fr] md:gap-14 md:px-8 md:pt-32">
         <div>
@@ -19,7 +29,9 @@ export function Hero() {
             Parrilla · Fútbol · Buena mesa
           </p>
           <h1 className="animate-rise-delay-1 mt-5 font-display text-5xl leading-[0.92] tracking-[0.04em] text-foam sm:text-6xl md:text-7xl lg:text-8xl">
-            <span className="block text-gold-bright">FOOD SPORT</span>
+            <span className="block text-gold-bright drop-shadow-[0_4px_24px_rgba(0,0,0,0.55)]">
+              FOOD SPORT
+            </span>
             <span className="mt-2 block text-3xl text-foam/90 sm:text-4xl md:text-5xl">
               RESTAURANTE
             </span>
