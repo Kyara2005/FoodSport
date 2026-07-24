@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { withBasePath } from "@/lib/paths";
 
 const links = [
   { href: "#inicio", label: "Inicio" },
@@ -14,7 +15,7 @@ export function Header() {
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-3 md:px-8">
         <Link href="#inicio" className="group flex items-center gap-3">
           <Image
-            src="/images/logo-food-sport.png"
+            src={withBasePath("/images/logo-food-sport.png")}
             alt="Logo Food Sport Restaurante"
             width={112}
             height={112}

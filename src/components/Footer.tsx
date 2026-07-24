@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Link from "next/link";
+import { withBasePath } from "@/lib/paths";
 
 export function Footer() {
   return (
@@ -6,7 +8,7 @@ export function Footer() {
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 px-5 md:flex-row md:px-8">
         <div className="flex items-center gap-3">
           <Image
-            src="/images/logo-food-sport.png"
+            src={withBasePath("/images/logo-food-sport.png")}
             alt=""
             width={88}
             height={88}
@@ -20,9 +22,17 @@ export function Footer() {
             </p>
           </div>
         </div>
-        <p className="text-center text-sm text-smoke md:text-right">
-          © {new Date().getFullYear()} Food Sport Restaurante. Todos los derechos reservados.
-        </p>
+        <div className="flex flex-col items-center gap-2 md:items-end">
+          <Link
+            href="/try"
+            className="text-sm text-gold-bright transition-colors hover:text-gold"
+          >
+            Redes y links
+          </Link>
+          <p className="text-center text-sm text-smoke md:text-right">
+            © {new Date().getFullYear()} Food Sport Restaurante. Todos los derechos reservados.
+          </p>
+        </div>
       </div>
     </footer>
   );

@@ -1,11 +1,12 @@
 import Image from "next/image";
 import logoFoodSport from "../../public/images/logo-food-sport.png";
+import { withBasePath } from "@/lib/paths";
 
 export function Hero() {
   return (
     <section id="inicio" className="relative flex min-h-svh items-center overflow-hidden">
       <Image
-        src="/images/hero-local.png"
+        src={withBasePath("/images/hero-local.png")}
         alt=""
         fill
         priority

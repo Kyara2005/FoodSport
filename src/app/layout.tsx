@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Bebas_Neue, Manrope } from "next/font/google";
+import { withBasePath } from "@/lib/paths";
 import "./globals.css";
 
 const display = Bebas_Neue({
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
   description:
     "Canastas parrilleras, hamburguesas a la brasa y ambiente de estadio. Bienvenido a Food Sport Restaurante.",
   icons: {
-    icon: "/images/logo-food-sport.png",
+    icon: withBasePath("/images/logo-food-sport.png"),
   },
 };
 

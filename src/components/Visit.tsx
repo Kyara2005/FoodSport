@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { withBasePath } from "@/lib/paths";
 
 export function Visit() {
   return (
@@ -7,7 +8,7 @@ export function Visit() {
       <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-5 md:grid-cols-[0.9fr_1.1fr] md:px-8">
         <div className="mx-auto w-full max-w-xs">
           <Image
-            src="/images/logo-food-sport.png"
+            src={withBasePath("/images/logo-food-sport.png")}
             alt="Food Sport Restaurante"
             width={720}
             height={720}
@@ -54,7 +55,11 @@ export function Visit() {
               <dt className="text-xs uppercase tracking-[0.22em] text-gold">Ambiente</dt>
               <dd className="mt-2 text-foam">Parrilla, fútbol y buena compañía</dd>
             </div>
-            <div className="sm:col-span-2">
+            <div>
+              <dt className="text-xs uppercase tracking-[0.22em] text-gold">Especialidad</dt>
+              <dd className="mt-2 text-foam">Canastas parrilleras</dd>
+            </div>
+            <div>
               <dt className="text-xs uppercase tracking-[0.22em] text-gold">Nuestro local</dt>
               <dd className="mt-2 text-foam">
                 Avenida Cristóbal Vaca de Castro, y Pedro Freile, Quito
@@ -64,15 +69,18 @@ export function Visit() {
                   href="https://maps.app.goo.gl/F5D7B7uYNxNNqiZn9"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="cta-ghost inline-flex rounded-sm px-5 py-2.5 text-xs"
+                  className="cta-ghost inline-flex items-center gap-2 rounded-sm px-4 py-2 text-xs"
                 >
+                  <svg
+                    aria-hidden
+                    viewBox="0 0 24 24"
+                    className="h-3.5 w-3.5 fill-current"
+                  >
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z" />
+                  </svg>
                   Ver en Google Maps
                 </a>
               </dd>
-            </div>
-            <div>
-              <dt className="text-xs uppercase tracking-[0.22em] text-gold">Especialidad</dt>
-              <dd className="mt-2 text-foam">Canastas parrilleras</dd>
             </div>
           </dl>
 

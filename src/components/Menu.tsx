@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { withBasePath } from "@/lib/paths";
 
 const canastas: {
   name: string;
@@ -85,7 +86,7 @@ export function Menu() {
                     <div className="relative mx-auto w-full max-w-[340px]">
                       <div className="absolute inset-6 rounded-full bg-gold/20 blur-2xl" />
                       <Image
-                        src={item.image}
+                        src={withBasePath(item.image)}
                         alt={item.imageAlt ?? item.name}
                         width={680}
                         height={680}
@@ -112,7 +113,7 @@ export function Menu() {
             <div className="relative mx-auto w-full max-w-[420px] lg:mx-0">
               <div className="absolute inset-8 rounded-full bg-ember/25 blur-3xl" />
               <Image
-                src="/images/hamburguesa-referencia.png"
+                src={withBasePath("/images/hamburguesa-referencia.png")}
                 alt="Hamburguesas a la parrillera Food Sport"
                 width={840}
                 height={840}
