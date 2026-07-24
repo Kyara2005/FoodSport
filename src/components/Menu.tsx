@@ -1,6 +1,11 @@
 import Image from "next/image";
 
-const canastas = [
+const canastas: {
+  name: string;
+  description: string;
+  image?: string;
+  imageAlt?: string;
+}[] = [
   {
     name: "Canasta Food Parrillera 1",
     description:
